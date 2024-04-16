@@ -28,7 +28,7 @@ dependencies {
     - cd your_project_folder
     - git clone https://github.com/ConnectSDK/Connect-SDK-Android-Lite.git
     - cd Connect-SDK-Android-Lite
-    - git submodule update --init
+    - git submodule update --remote
 
 2. On the root of your project directory create/modify the settings.gradle file. It should contain something like the following:
     ```groovy
