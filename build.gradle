@@ -20,7 +20,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'jacoco'
 
 apply plugin: 'maven-publish'
-group='com.github.NetgemApps'
+group=project.GROUP_ID
 
 jacoco {
     toolVersion = "0.8.12"
@@ -115,6 +115,25 @@ android {
 
     useLibrary 'org.apache.http.legacy'
     ndkVersion "22.1.7171670"
+
+    publishing {
+        singleVariant('release') {
+            withSourcesJar()
+        }
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            fullRelease(MavenPublication) {
+                from components.release
+                groupId = project.GROUP_ID
+                artifactId = project.ARTIFACT_ID
+                version = project.VERSION_NAME
+            }
+        }
+    }
 }
 
 android.testOptions.unitTests.all {
