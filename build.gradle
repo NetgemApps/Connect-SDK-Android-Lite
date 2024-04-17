@@ -61,9 +61,10 @@ build.dependsOn jacocoTestReport
 
 android {
     namespace "com.connectsdk"
+    compileSdk = 34
+    buildToolsVersion = '34.0.0'
 
     defaultConfig {
-        compileSdk = 34
         minSdk = 21
         targetSdk = 34
     }
@@ -108,6 +109,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
     useLibrary 'org.apache.http.legacy'
     ndkVersion "22.1.7171670"
 }
