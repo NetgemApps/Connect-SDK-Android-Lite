@@ -114,7 +114,6 @@ android {
     }
 
     useLibrary 'org.apache.http.legacy'
-    ndkVersion "22.1.7171670"
 
     publishing {
         singleVariant('release') {
